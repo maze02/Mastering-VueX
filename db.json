@@ -71,6 +71,90 @@
           "name": "Mary Gordon"
         }
       ]
+    },
+    {
+      "id": 7998815,
+      "category": "food",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Testing",
+      "description": "testing it works",
+      "location": "Spain",
+      "date": "2021-12-02T21:09:00.000Z",
+      "time": "20:00",
+      "attendees": []
+    },
+    {
+      "id": 7927731,
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Planting trees",
+      "description": "Join our session for planting trees",
+      "location": "In the Forest",
+      "date": "2021-12-09T21:31:00.000Z",
+      "time": "15:00",
+      "attendees": []
+    },
+    {
+      "id": 4611038,
+      "category": "sustainability",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "SDFSF",
+      "description": "SDFDSF",
+      "location": "SDADS",
+      "date": "2021-12-01T21:36:00.000Z",
+      "time": "19:00",
+      "attendees": []
+    },
+    {
+      "id": 4584213,
+      "category": "animal welfare",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "SFDSDF",
+      "description": "ZXCZX",
+      "location": "sdfdsf",
+      "date": "2021-12-09T21:36:00.000Z",
+      "time": "14:00",
+      "attendees": []
+    },
+    {
+      "id": 3913517,
+      "category": "sustainability",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Is it working",
+      "description": "dfg",
+      "location": "dfg",
+      "date": "2021-12-01T21:55:00.000Z",
+      "time": "20:00",
+      "attendees": []
+    },
+    {
+      "id": 8218833,
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Sleep",
+      "description": "Sleep a lot",
+      "location": "now",
+      "date": "2021-12-22T21:57:00.000Z",
+      "time": "14:00",
+      "attendees": []
     }
   ]
 }
