@@ -8,7 +8,9 @@ export default new Vuex.Store({
   state: {
     user: { id: "abc123", name: "Adam Jahr"},
     categories: ['sustainability', 'nature', 'animal welfare', 'housing', 'education', 'food', 'community'],
-    events: []
+    events: [],
+    eventsTotal:0,
+    event:{} //event object
   },
   mutations: {
     ADD_EVENT(state, event){
@@ -16,6 +18,9 @@ export default new Vuex.Store({
     },
     SET_EVENTS(state, events){//sets the state
       state.events = events
+    },
+    SET_EVENT(state, event){ //sets the value of the event
+      state.event = event
     }
   },
   actions: {
@@ -33,6 +38,15 @@ export default new Vuex.Store({
       })
       .catch(error =>{
         console.log("There was an error:", error.response)
+      })
+    },
+    fetchEvent({commit}, id){
+      EventService.getEvent(id)
+      .then(response => {
+        commit('SET_EVENT', response.data)
+      })
+      .catch(error => {
+        console.log("There was an error", error.response)
       })
     }
   },
