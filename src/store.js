@@ -13,6 +13,9 @@ export default new Vuex.Store({
   mutations: {
     ADD_EVENT(state, event){
       state.events.push(event)
+    },
+    SET_EVENTS(state, events){//sets the state
+      state.events = events
     }
   },
   actions: {
@@ -21,6 +24,15 @@ export default new Vuex.Store({
       commit("ADD_EVENT", event)
     })
 //when our EventService responds, then we'll commit the add event mutation
+    },
+    fetchEvents({commit}){
+      EventService.getEvents()
+      .then(response =>{
+        commit('SET_EVENTS', response.data)
+      })
+      .catch(error =>{
+        console.log("There was an error:", error.response)
+      })
     }
   },
   getters: {

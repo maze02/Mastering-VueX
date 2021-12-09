@@ -7,25 +7,17 @@
 
 <script>
 import EventCard from '@/components/EventCard.vue'
-import EventService from '@/services/EventService.js'
+import {mapState} from "vuex"
+
 
 export default {
   components: {
     EventCard
   },
-  data() {
-    return {
-      events: []
-    }
+  created() {  
+    this.$store.dispatch("fetchEvents")    
   },
-  created() {
-    EventService.getEvents()
-      .then(response => {
-        this.events = response.data
-      })
-      .catch(error => {
-        console.log('There was an error:', error.response)
-      })
-  }
+  computed: mapState(['events'])
+  
 }
 </script>
