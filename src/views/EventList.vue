@@ -15,9 +15,17 @@ export default {
     EventCard
   },
   created() {  
-    this.$store.dispatch("fetchEvents")    
+    this.$store.dispatch("fetchEvents", {
+      perPage: 3, 
+      page: this.page
+    })    
   },
-  computed: mapState(['events'])
+  computed: {
+    page(){
+      return parseInt(this.$route.query.page) || 1 //if no URL parameters, assume the first page
+    },
+    ...mapState(['events'])
+  }
   
 }
 </script>

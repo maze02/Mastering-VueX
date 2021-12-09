@@ -25,8 +25,8 @@ export default new Vuex.Store({
     })
 //when our EventService responds, then we'll commit the add event mutation
     },
-    fetchEvents({commit}){
-      EventService.getEvents()
+    fetchEvents({commit}, {perPage, page}){
+      EventService.getEvents(perPage, page)
       .then(response =>{
         commit('SET_EVENTS', response.data)
       })
