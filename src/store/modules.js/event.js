@@ -1,18 +1,11 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
 import EventService from "@/services/EventService.js"
-
-Vue.use(Vuex)
-
-export default new Vuex.Store({
-  state: {
-    user: { id: "abc123", name: "Adam Jahr"},
-    categories: ['sustainability', 'nature', 'animal welfare', 'housing', 'education', 'food', 'community'],
+export const state = {
     events: [],
     eventsTotal:0,
     event:{} //event object
-  },
-  mutations: {
+  }
+
+export const  mutations = {
     ADD_EVENT(state, event){
       state.events.push(event)
     },
@@ -22,8 +15,9 @@ export default new Vuex.Store({
     SET_EVENT(state, event){ //sets the value of the event
       state.event = event
     }
-  },
-  actions: {
+  }
+
+export const actions ={
     createEvent({commit}, event){
       return EventService.postEvent(event).then(() => {
       commit("ADD_EVENT", event)
@@ -54,8 +48,8 @@ export default new Vuex.Store({
       })
     }
   }
-},
-  getters: {
+}
+ export const getters = {
     //catLength: state => state.categories.length,
     //doneTodos: state => state.todos.filter(todo => todo.done),
     //activeTodosCount1:(state, getters) =>{ //example of passing an entire getters  into another getters - wow - crazy!
@@ -68,4 +62,4 @@ export default new Vuex.Store({
     //same as (state) =>{return    (id)=>{return state.events.find(event => event.id === id)}}
     //basically takes in the state and returns another function 
   }
-})
+

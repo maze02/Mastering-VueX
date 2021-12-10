@@ -74,7 +74,7 @@ import Datepicker from "vuejs-datepicker"
 
       },
       createFreshEventObject(){
-        const user = this.$store.state.user
+        const user = this.$store.state.user.user  //add extra 'user' to reference the module name
         const id = Math.floor(Math.random()* 10000000)
 
         return {
